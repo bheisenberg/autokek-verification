@@ -32,7 +32,7 @@ namespace Autokek
         private void CreateUser ()
         {
             User newUser = new User(usernameBox.Text);
-            if (newUser.valid)
+            if (newUser.exists)
             {
                 SwitchControl(new PasswordPanel(newUser));
             } else
