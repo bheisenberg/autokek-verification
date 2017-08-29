@@ -116,6 +116,7 @@
             this.Controls.Add(this.welcomeLabel);
             this.Name = "VerificationPanel";
             this.Size = new System.Drawing.Size(281, 367);
+            this.Load += new System.EventHandler(this.VerificationPanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,13 +29,12 @@ namespace Autokek
             errorLabel.Text = message;
         }
 
-        private void create_Click(object sender, EventArgs e)
-        {
-            if (passwordField.Text == confirmField.Text)
+        private void create_Click(object sender, EventArgs e) {
+            User user = new User(usernameField.Text, emailField.Text, passwordField.Text, confirmField.Text);
+            if (user.valid) 
             {
-                User newUser = new User(usernameField.Text, emailField.Text, passwordField.Text);
-                generateVerification();
-                SwitchControl(new VerificationPanel());
+                user.verificationCode = generateVerification();
+                SwitchControl(new VerificationPanel(user));
             }
             else
             {
@@ -50,7 +49,7 @@ namespace Autokek
             control.Dock = DockStyle.Fill;
         }
 
-        private int generateVerification()
+        private string generateVerification()
         {
             int min = 0;
             int max = 9;
@@ -61,8 +60,7 @@ namespace Autokek
             {
                 sequence += rand.Next(min, max);
             }
-            Console.WriteLine(sequence);
-            return Int32.Parse(sequence);
+            return sequence;
         }
     }
 }

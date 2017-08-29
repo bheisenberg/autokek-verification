@@ -44,7 +44,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 94);
+            this.label3.Location = new System.Drawing.Point(33, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 6;
@@ -54,7 +54,7 @@
             // 
             this.usernameField.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usernameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameField.Location = new System.Drawing.Point(36, 114);
+            this.usernameField.Location = new System.Drawing.Point(36, 62);
             this.usernameField.Name = "usernameField";
             this.usernameField.Size = new System.Drawing.Size(250, 28);
             this.usernameField.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 160);
+            this.label1.Location = new System.Drawing.Point(33, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 7;
@@ -73,7 +73,7 @@
             // 
             this.passwordField.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordField.Location = new System.Drawing.Point(36, 180);
+            this.passwordField.Location = new System.Drawing.Point(36, 192);
             this.passwordField.Name = "passwordField";
             this.passwordField.Size = new System.Drawing.Size(250, 28);
             this.passwordField.TabIndex = 2;
@@ -83,7 +83,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 30);
+            this.label2.Location = new System.Drawing.Point(33, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 5;
@@ -93,7 +93,7 @@
             // 
             this.emailField.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailField.Location = new System.Drawing.Point(36, 50);
+            this.emailField.Location = new System.Drawing.Point(36, 124);
             this.emailField.Name = "emailField";
             this.emailField.Size = new System.Drawing.Size(250, 28);
             this.emailField.TabIndex = 0;
@@ -102,7 +102,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 229);
+            this.label4.Location = new System.Drawing.Point(33, 241);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 17);
             this.label4.TabIndex = 8;
@@ -112,7 +112,7 @@
             // 
             this.confirmField.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.confirmField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmField.Location = new System.Drawing.Point(36, 249);
+            this.confirmField.Location = new System.Drawing.Point(36, 261);
             this.confirmField.Name = "confirmField";
             this.confirmField.Size = new System.Drawing.Size(250, 28);
             this.confirmField.TabIndex = 3;
@@ -135,7 +135,7 @@
             this.errorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.errorLabel.AutoSize = true;
             this.errorLabel.ForeColor = System.Drawing.Color.Crimson;
-            this.errorLabel.Location = new System.Drawing.Point(35, 280);
+            this.errorLabel.Location = new System.Drawing.Point(35, 292);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(40, 17);
             this.errorLabel.TabIndex = 9;

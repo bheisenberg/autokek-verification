@@ -41,10 +41,10 @@ namespace Autokek
             Close();
         }
 
-        public bool UserExists(User user)
+        public bool UserExists(string username)
         {
             Connect();
-            string queryString = string.Format("SELECT * FROM Users WHERE username = '{0}'", user.username);
+            string queryString = string.Format("SELECT * FROM Users WHERE username = '{0}'", username);
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = queryString;
             MySqlDataReader reader = command.ExecuteReader();
