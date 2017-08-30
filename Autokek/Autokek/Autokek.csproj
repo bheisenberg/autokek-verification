@@ -56,6 +56,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTransform.cs" />
     <Compile Include="NewAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>

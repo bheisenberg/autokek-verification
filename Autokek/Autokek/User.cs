@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace Autokek
 {
@@ -11,7 +13,6 @@ namespace Autokek
         public User (String username)
         {
             this.username = username;
-            this.exists = doesExist();
         }
 
         public User (String username, String email, String password, String confirmPassword)
@@ -20,45 +21,52 @@ namespace Autokek
             this.email = email;
             this.password = password;
             this.confirmPassword = confirmPassword;
-            this.valid = isValid();
         }
 
         public string username { get; set; }
         public string password { get; set; }
         public string confirmPassword { get; set; }
         public string email { get; set; }
-        public bool exists;
-        public bool valid;
         public string verificationCode { get; set; }
         private int[] usernameBounds = new int[] { 3, 16 };
+        private string passwordPattern = @"^([a-zA-Z0-9@%+\\/'!#$^\?:\.(){}\[\]~`\-_]){8,100}$";
+        private string namePattern = @"^([a-zA-Z]+[0-9]*){3,16}$";
 
-        private bool validName ()
+        public bool validName ()
         {
-            return (username.Length >= usernameBounds[0] && username.Length <= usernameBounds[1]);
+            return (Regex.IsMatch(username, namePattern));
         }
 
-        private bool doesExist()
+        public bool doesExist()
         {
             DBConnector connection = new DBConnector();
             return connection.UserExists(this.username);
         }
 
-        private bool isValid ()
+        public bool isValid ()
         {
             return (validName() && validEmail() && validPassword() && matchingPassword() && !doesExist());
         }
 
-        private bool validEmail()
+        public bool validEmail()
         {
-            return true;
+            try
+            {
+                MailAddress email = new MailAddress(this.email);
+                return email.Address == this.email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        private bool validPassword()
+        public bool validPassword()
         {
-            return (password.Length >= 8 && password.Length < 100);
+            return (Regex.IsMatch(password, passwordPattern));
         }
 
-        private bool matchingPassword()
+        public bool matchingPassword()
         {
             return (password == confirmPassword);
         }
