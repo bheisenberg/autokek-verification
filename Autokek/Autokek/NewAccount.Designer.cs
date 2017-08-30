@@ -138,7 +138,7 @@
             this.mismatchError.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mismatchError.AutoSize = true;
             this.mismatchError.ForeColor = System.Drawing.Color.Crimson;
-            this.mismatchError.Location = new System.Drawing.Point(35, 298);
+            this.mismatchError.Location = new System.Drawing.Point(33, 297);
             this.mismatchError.Name = "mismatchError";
             this.mismatchError.Size = new System.Drawing.Size(40, 17);
             this.mismatchError.TabIndex = 9;
@@ -150,7 +150,7 @@
             this.passwordError.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordError.AutoSize = true;
             this.passwordError.ForeColor = System.Drawing.Color.Crimson;
-            this.passwordError.Location = new System.Drawing.Point(35, 230);
+            this.passwordError.Location = new System.Drawing.Point(35, 229);
             this.passwordError.Name = "passwordError";
             this.passwordError.Size = new System.Drawing.Size(40, 17);
             this.passwordError.TabIndex = 10;
@@ -174,7 +174,7 @@
             this.usernameError.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usernameError.AutoSize = true;
             this.usernameError.ForeColor = System.Drawing.Color.Crimson;
-            this.usernameError.Location = new System.Drawing.Point(35, 93);
+            this.usernameError.Location = new System.Drawing.Point(33, 93);
             this.usernameError.Name = "usernameError";
             this.usernameError.Size = new System.Drawing.Size(40, 17);
             this.usernameError.TabIndex = 12;

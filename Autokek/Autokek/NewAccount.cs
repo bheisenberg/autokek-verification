@@ -12,10 +12,10 @@ namespace Autokek
 {
     public partial class NewAccount : UserControl
     {
-        private string mismatchMessage = "Your passwords do not match";
-        private string passwordMessage = "Your password must use valid charcters";
-        private string usernameMessage = "Your username can only use alphanumeric values";
-        private string emailMessage = "Your email must be valid";
+        private string mismatchMessage = "Passwords do not match";
+        private string passwordMessage = "Password must use valid characters";
+        private string usernameMessage = "Username must use alphanumeric characters";
+        private string emailMessage = "Email must be valid";
         public NewAccount()
         {
             InitializeComponent();
@@ -37,36 +37,51 @@ namespace Autokek
             field.Visible = false;
         }
 
-        private void create_Click(object sender, EventArgs e) {
+        private void create_Click(object sender, EventArgs e)
+        {
 
             User user = new User(usernameField.Text, emailField.Text, passwordField.Text, confirmField.Text);
-            if (user.validName()) {
-                setErrorMessage(usernameError, usernameMessage);
-            }
-            else
+            if (!user.isValid())
             {
-                hideErrorMessage(usernameError);
-            }
+                if (!user.validName())
+                {
+                    setErrorMessage(usernameError, usernameMessage);
+                }
+                else
+                {
+                    hideErrorMessage(usernameError);
+                }
 
-            if (!user.validEmail()) { 
-                setErrorMessage(usernameError, usernameMessage);
+                if (!user.validEmail())
+                {
+                    setErrorMessage(emailError, emailMessage);
+                }
+                else
+                {
+                    hideErrorMessage(emailError);
+                }
+
+                if (!user.validPassword())
+                {
+                    setErrorMessage(passwordError, passwordMessage);
+                }
+                else
+                {
+                    hideErrorMessage(passwordError);
+                }
+
+                if (!user.matchingPassword())
+                {
+                    setErrorMessage(mismatchError, mismatchMessage);
+                }
+                else
+                {
+                    hideErrorMessage(mismatchError);
+                }
             }
             else
             {
-                hideErrorMessage(usernameError);
-            }
-            Console.WriteLine("Username ("+user.username+"): " + user.validName());
-            Console.WriteLine("Email: " + user.validEmail());
-            Console.WriteLine("Password: " + user.validPassword());
-            Console.WriteLine("Password Match: " + user.matchingPassword());
-            if (user.isValid()) 
-            {
-                user.verificationCode = generateVerification();
-                //SwitchControl(new VerificationPanel(user));
-            }
-            else
-            {
-                setErrorMessage(mismatchMessage);
+                SwitchControl(new VerificationPanel(user));
             }
         }
 
@@ -75,20 +90,6 @@ namespace Autokek
             Controls.Clear();
             Controls.Add(control);
             control.Dock = DockStyle.Fill;
-        }
-
-        private string generateVerification()
-        {
-            int min = 0;
-            int max = 9;
-            int sequenceLength = 6;
-            string sequence = "";
-            Random rand = new Random();
-            for (int i = 0; i < sequenceLength; i++)
-            {
-                sequence += rand.Next(min, max);
-            }
-            return sequence;
         }
     }
 }

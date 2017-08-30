@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.usernameBox = new System.Windows.Forms.TextBox();
+            this.verificationBox = new System.Windows.Forms.TextBox();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -36,17 +36,17 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // usernameBox
+            // verificationBox
             // 
-            this.usernameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.usernameBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.usernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameBox.Location = new System.Drawing.Point(66, 203);
-            this.usernameBox.MaxLength = 6;
-            this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(144, 45);
-            this.usernameBox.TabIndex = 13;
-            this.usernameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.verificationBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.verificationBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.verificationBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verificationBox.Location = new System.Drawing.Point(66, 203);
+            this.verificationBox.MaxLength = 6;
+            this.verificationBox.Name = "verificationBox";
+            this.verificationBox.Size = new System.Drawing.Size(144, 45);
+            this.verificationBox.TabIndex = 13;
+            this.verificationBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // welcomeLabel
             // 
@@ -69,6 +69,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // linkLabel1
             // 
@@ -112,7 +113,7 @@
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.usernameBox);
+            this.Controls.Add(this.verificationBox);
             this.Controls.Add(this.welcomeLabel);
             this.Name = "VerificationPanel";
             this.Size = new System.Drawing.Size(281, 367);
@@ -124,7 +125,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox usernameBox;
+        private System.Windows.Forms.TextBox verificationBox;
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkLabel1;

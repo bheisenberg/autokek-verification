@@ -35,7 +35,7 @@ namespace Autokek
         {
             Connect();
             MySqlCommand command = connection.CreateCommand();
-            string insertString = string.Format("INSERT INTO Users VALUES ({0}, {1}, {2})", user.username, user.email, user.password);
+            string insertString = string.Format("INSERT INTO Users (username, email, password) VALUES ('{0}', '{1}', '{2}')", user.username, user.email, user.password);
             command.CommandText = insertString;
             command.ExecuteNonQuery();
             Close();
@@ -48,8 +48,9 @@ namespace Autokek
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = queryString;
             MySqlDataReader reader = command.ExecuteReader();
+            bool result =  reader.HasRows;
             Close();
-            return reader.HasRows;
+            return result;
         }
 
 

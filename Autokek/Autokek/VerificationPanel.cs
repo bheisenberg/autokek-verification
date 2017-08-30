@@ -28,6 +28,7 @@ namespace Autokek
 
         private void VerificationPanel_Load(object sender, EventArgs e)
         {
+            user.verificationCode = generateVerification();
             emailLabel.Text = user.email;
             MailMessage message = new MailMessage();
             message.From = new MailAddress("admin@autokek.com");
@@ -40,6 +41,29 @@ namespace Autokek
                 EnableSsl = true
             };
             smtp.Send(message);
+        }
+
+        private string generateVerification()
+        {
+            int min = 0;
+            int max = 9;
+            int sequenceLength = 6;
+            string sequence = "";
+            Random rand = new Random();
+            for (int i = 0; i < sequenceLength; i++)
+            {
+                sequence += rand.Next(min, max);
+            }
+            return sequence;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(verificationBox.Text == user.verificationCode)
+            {
+                DBUser newUser = new DBUser(user);
+                Console.WriteLine("Success.");
+            }
         }
     }
 }
