@@ -23,6 +23,13 @@ namespace Autokek
             this.confirmPassword = confirmPassword;
         }
 
+        public User(String username, String email, String password)
+        {
+            this.username = username;
+            this.email = email;
+            this.password = password;
+        }
+
         public string username { get; set; }
         public string password { get; set; }
         public string confirmPassword { get; set; }

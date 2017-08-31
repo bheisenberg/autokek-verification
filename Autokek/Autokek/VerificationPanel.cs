@@ -61,8 +61,8 @@ namespace Autokek
         {
             if(verificationBox.Text == user.verificationCode)
             {
-                DBUser newUser = new DBUser(user);
                 Console.WriteLine("Success.");
+                DBConnector.AddUser(user);
             }
         }
     }

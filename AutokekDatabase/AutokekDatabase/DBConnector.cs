@@ -39,7 +39,7 @@ namespace AutokekDatabase
                                         id int PRIMARY KEY AUTO_INCREMENT,
                                         username VARCHAR(16),
                                         email VARCHAR(100),
-                                        password VARCHAR(50)
+                                        password VARCHAR(50000)
                                     );";
             command.ExecuteNonQuery();
             Console.WriteLine("Tables created");

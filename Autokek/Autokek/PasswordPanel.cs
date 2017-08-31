@@ -28,5 +28,16 @@ namespace Autokek
         {
             welcomeLabel.Text = string.Format("Welcome, {0}", user.username);
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (PasswordHash.ValidatePassword(passwordField.Text, DBConnector.GetPassword(user.username))) {
+                Console.WriteLine("Success, password matched!");
+            }
+            else
+            {
+                Console.WriteLine("Password does not match.");
+            }
+        }
     }
 }

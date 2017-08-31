@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.usernameBox = new System.Windows.Forms.TextBox();
+            this.passwordField = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // usernameBox
+            // passwordField
             // 
-            this.usernameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.usernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameBox.Location = new System.Drawing.Point(51, 56);
-            this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(219, 28);
-            this.usernameBox.TabIndex = 9;
-            this.usernameBox.UseSystemPasswordChar = true;
+            this.passwordField.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.passwordField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordField.Location = new System.Drawing.Point(51, 56);
+            this.passwordField.Name = "passwordField";
+            this.passwordField.Size = new System.Drawing.Size(219, 28);
+            this.passwordField.TabIndex = 9;
+            this.passwordField.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -64,6 +64,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // welcomeLabel
             // 
@@ -80,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.usernameBox);
+            this.Controls.Add(this.passwordField);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
@@ -94,7 +95,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox usernameBox;
+        private System.Windows.Forms.TextBox passwordField;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label welcomeLabel;
